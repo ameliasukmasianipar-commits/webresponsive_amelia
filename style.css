@@ -1,0 +1,585 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #E9F5DB;
+  color: #5C3C25;
+}
+
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  grid-template-areas:
+    "header header header"
+    "sidebar main promo"
+    "footer footer footer";
+  gap: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  grid-area: header;
+  background: #2D6A4F;
+  color: #FFFFFF;
+  padding: 16px 24px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.4s ease,
+              box-shadow 0.4s ease;
+  animation: fadeIn 0.7s ease;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #E9F5DB;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #95D5B2;
+  transform: translateY(-2px);
+}
+
+.hamburger-btn {
+  display: none;
+  background: #95D5B2;
+  color: #2D6A4F;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* SIDEBAR KIRI */
+.sidebar-kiri {
+  grid-area: sidebar;
+  background: #2D6A4F;
+  color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  animation: slideInLeft 0.8s ease;
+}
+
+.sidebar-kiri h3 {
+  color: #E9F5DB;
+}
+
+.sidebar-kiri ul {
+  list-style: none;
+  margin-top: 12px;
+  line-height: 2;
+}
+
+.sidebar-kiri li {
+  transition: transform 0.3s ease,
+              color 0.3s ease;
+}
+
+.sidebar-kiri li:hover {
+  transform: translateX(6px);
+  color: #95D5B2;
+}
+
+/* KONTEN UTAMA */
+.konten-utama {
+  grid-area: main;
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 0.8s ease;
+}
+
+.konten-utama h2 {
+  color: #2D6A4F;
+}
+
+/* CARD */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.card {
+  background: #E9F5DB;
+  border: 1px solid #95D5B2;
+  padding: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  opacity: 0;
+  animation: cardMuncul 0.7s ease forwards;
+
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 12px 25px rgba(45, 106, 79, 0.18);
+  border-color: #2D6A4F;
+}
+
+.card h4 {
+  color: #2D6A4F;
+}
+
+.card p {
+  color: #5C3C25;
+}
+
+/* TANTANGAN 1: GAMBAR CARD RESPONSIVE */
+.card img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ANIMASI KARTU BERURUTAN */
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* WIDGET PROMO */
+.widget-promo {
+  grid-area: promo;
+  background: #95D5B2;
+  color: #5C3C25;
+  padding: 20px;
+  border-radius: 10px;
+  animation: slideInRight 0.8s ease;
+}
+
+.widget-promo h3 {
+  color: #2D6A4F;
+}
+
+.promo-box {
+  background: rgba(255, 255, 255, 0.55);
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.promo-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(45, 106, 79, 0.15);
+}
+
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  background: #2D6A4F;
+  color: #E9F5DB;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+}
+
+/* LOGO SEKOLAH DAN JURUSAN */
+.logo-img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.sidebar-kiri .logo-img,
+.widget-promo .logo-img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto 15px;
+  background: transparent;
+  transition: none;
+}
+
+.sidebar-kiri .logo-img:hover,
+.widget-promo .logo-img:hover {
+  transform: none;
+}
+
+/* =========================================
+   BREAKPOINT 1: TABLET (601px - 1023px)
+========================================= */
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+  .page-wrapper {
+    grid-template-columns: 190px 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+  }
+
+  .widget-promo {
+    display: none;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+   BREAKPOINT 2: SMARTPHONE (MAX 600px)
+========================================= */
+@media screen and (max-width: 600px) {
+  .page-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "sidebar"
+      "main"
+      "footer";
+    padding: 80px 10px 10px 10px;
+  }
+
+  /* HEADER FIXED */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 10px rgba(45, 106, 79, 0.2);
+    flex-wrap: wrap;
+  }
+
+  .nav-links,
+  .sidebar-kiri,
+  .widget-promo {
+    display: none;
+  }
+
+  /* SIDEBAR MUNCUL */
+  .sidebar-kiri.aktif {
+    display: block;
+    grid-area: sidebar;
+    animation: fadeIn 0.25s ease-in-out;
+  }
+
+  /* NAVIGASI MUNCUL */
+  .nav-links.aktif {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 10px;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   ANIMASI
+========================================= */
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card muncul dari bawah */
+@keyframes cardMuncul {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sidebar muncul dari kiri */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Promo muncul dari kanan */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================================
+   TANTANGAN 2: ORIENTATION BREAKPOINT
+   HEADER BERUBAH TEAL SAAT HP MENDATAR
+========================================= */
+@media screen and (max-width: 850px) and (orientation: landscape) {
+  .header {
+    background-color: #0d9488 !important;
+    color: #FFFFFF;
+  }
+}
+
+/* =========================================
+   TANTANGAN 3: SMART TV (MIN 1921px)
+========================================= */
+@media screen and (min-width: 1921px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* =========================================
+   STYLE CHATBOT SMKN 9 MEDAN
+========================================= */
+.chat-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2D6A4F;
+  color: #FFFFFF;
+  border: 2px solid #95D5B2;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(45, 106, 79, 0.3);
+  z-index: 1100;
+  transition: transform 0.3s ease,
+              background 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.chat-toggle-btn:hover {
+  background: #1F513B;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(45, 106, 79, 0.3);
+}
+
+/* KOTAK CHATBOT */
+.chatbot-box {
+  position: fixed;
+  bottom: 75px;
+  right: 20px;
+  width: 330px;
+  max-width: calc(100vw - 40px);
+  background: #FFFFFF;
+  border: 1px solid #95D5B2;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(45, 106, 79, 0.25);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1100;
+}
+
+.chatbot-box.open {
+  display: flex;
+  animation: chatMuncul 0.35s ease;
+}
+
+/* Animasi chatbot */
+@keyframes chatMuncul {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* HEADER CHATBOT */
+.chat-header {
+  background: #2D6A4F;
+  color: #FFFFFF;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.chat-close-btn {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* PESAN CHAT */
+.chat-messages {
+  padding: 12px;
+  height: 210px;
+  overflow-y: auto;
+  background: #E9F5DB;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.msg {
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: 85%;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+}
+
+.msg.bot {
+  background: #E9F5DB;
+  color: #5C3C25;
+  border: 1px solid #95D5B2;
+  align-self: flex-start;
+  line-height: 1.8;
+  padding: 12px 15px;
+}
+
+.msg.user {
+  background: #2D6A4F;
+  color: #FFFFFF;
+  align-self: flex-end;
+}
+
+.quick-btn {
+  background: #E9F5DB;
+  color: #5C3C25;
+  border: 1px solid #95D5B2;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease,
+              color 0.2s ease;
+}
+
+.quick-btn:hover {
+  background: #95D5B2;
+  color: #2D6A4F;
+  font-weight: 500;
+}
+
+/* INPUT CHAT */
+.chat-input-area {
+  display: flex;
+  border-top: 1px solid #95D5B2;
+}
+
+.chat-input-area input {
+  flex: 1;
+  border: none;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  outline: none;
+  color: #5C3C25;
+}
+
+.chat-input-area button {
+  background: #2D6A4F;
+  color: #FFFFFF;
+  border: none;
+  padding: 0 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-input-area button:hover {
+  background: #1F513B;
+}
+
+/* =========================================
+   PENGATURAN AKSESIBILITAS ANIMASI
+========================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

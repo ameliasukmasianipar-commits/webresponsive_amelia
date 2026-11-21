@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal RPL SMKN 9 Medan - Responsive Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo">RPL SMKN 9 MEDAN</div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#">Beranda</a>
+        <a href="#">Kurikulum</a>
+        <a href="#">Karya Siswa</a>
+        <a href="#">Kontak</a>
+      </nav>
+
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+        &#9776;
+      </button>
+    </header>
+
+
+    <!-- SIDEBAR KIRI -->
+    <aside class="sidebar-kiri" id="sidebarKiri">
+
+      <img src="https://yourimageshare.com/ib/B945VaHzjr.png"
+           alt="Logo SMKN 9 Medan" class="logo-img">
+
+      <h3>Menu Cepat</h3>
+
+      <ul>
+        <li>Jadwal Praktikum</li>
+        <li>Modul Pemrograman Web</li>
+        <li>Daftar Lab RPL</li>
+        <li>Info PKL &amp; LSP</li>
+      </ul>
+
+    </aside>
+
+
+    <!-- KONTEN UTAMA -->
+    <main class="konten-utama">
+
+      <h2>Berita &amp; Proyek Terbaru Kelas XII RPL</h2>
+
+      <div class="card-grid">
+
+        <!-- CARD 1 -->
+        <article class="card">
+          <img src="inventaris qr.jpg"
+               alt="Aplikasi Inventaris QR">
+
+          <h4>Aplikasi Inventaris QR</h4>
+
+          <p>Sistem peminjaman alat laboratorium berbasis web responsif dengan pemindai QR Code.</p>
+        </article>
+
+
+        <!-- CARD 2 -->
+        <article class="card">
+          <img src="portal.jpeg"
+               alt="Portal CBT Online">
+
+          <h4>Portal CBT Online</h4>
+
+          <p>Platform ujian berbasis komputer yang adaptif pada desktop lab maupun smartphone.</p>
+        </article>
+
+
+        <!-- CARD 3 -->
+        <article class="card">
+          <img src="e-katalog.jpg"
+               alt="E-Katalog Produk PKK">
+
+          <h4>E-Katalog Produk PKK</h4>
+
+          <p>Etalase digital karya kreatif siswa/proyek Rekayasa Perangkat Lunak.</p>
+        </article>
+
+
+        <!-- CARD 4 -->
+        <article class="card">
+          <img src="absensisiswa.jpg"
+               alt="Sistem Absensi Kelas">
+
+          <h4>Sistem Absensi Kelas</h4>
+
+          <p>Pencatatan kehadiran siswa secara real-time terintegrasi dengan rekap wali kelas.</p>
+        </article>
+
+
+        <!-- CARD 5 -->
+        <article class="card">
+          <img src="smkn9medan.jpeg"
+               alt="Profil Sekolah">
+
+          <h4>Profil Sekolah</h4>
+
+          <p>Profil sekolah dengan informasi tentang visi, misi, dan program kegiatan.</p>
+        </article>
+
+
+        <!-- CARD 6 -->
+        <article class="card">
+          <img src="gurutamu.jpeg"
+               alt="Belajar Seru dengan Guru Tamu Industri">
+
+          <h4> Belajar Seru dengan Guru Tamu Industri</h4>
+
+          <p>Siswa XII RPL 2 Smkn 9 Medan kedatangan guru tamu dari perusahaan @KitaKale.</p>
+        </article>
+
+      </div>
+    </main>
+
+
+    <!-- WIDGET PROMO KANAN -->
+    <aside class="widget-promo">
+
+      <img src="https://yourimageshare.com/ib/DUev43oNoc.png"
+           alt="Logo Jurusan RPL" class="logo-img">
+
+      <h3>Info &amp; Promo Lab</h3>
+
+      <div class="promo-box">
+        <strong>Uji Kompetensi LSP!</strong>
+        <p>Persiapkan portofolio web responsif kalian sebelum jadwal asesmen.</p>
+      </div>
+
+    </aside>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2026 Jurusan RPL SMK Negeri 9 Medan - Tugas Responsive XII RPL 2</p>
+    </footer>
+
+  </div>
+
+
+  <!-- TOMBOL CHATBOT -->
+  <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Buka Chat">
+    &#128172; Tanya RPL
+  </button>
+
+
+  <!-- WIDGET CHATBOT -->
+  <div class="chatbot-box" id="chatbotBox">
+
+    <div class="chat-header">
+      <span>Chatbot RPL</span>
+      <button class="chat-close-btn" id="chatCloseBtn">&times;</button>
+    </div>
+
+
+    <!-- PESAN CHAT -->
+    <div class="chat-messages" id="chatMessages">
+
+      <div class="msg bot">
+        Hi! Ada yang ingin ditanyakan sekilas RPL SMKN 9 Medan?
+      </div>
+
+    </div>
+
+    <!-- INPUT CHAT -->
+    <form class="chat-input-area" id="chatForm">
+
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Ketik pertanyaan..."
+        autocomplete="off"
+      >
+
+      <button type="submit">Kirim</button>
+
+    </form>
+
+  </div>
+
+
+  <!-- JAVASCRIPT EKSTERNAL -->
+  <script src="script.js"></script>
+
+</body>
+</html>
